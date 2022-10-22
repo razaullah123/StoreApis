@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/home/razaullah/E Directory/[FreeCoursesOnline.Me] Code With Mosh - The Ultimate Django Series Part 1/1.Getting Started (3m)/4- Supplementary Materials/Resources/Code/5- Django ORM/Start/storefront1/venv/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pycodestyle import _main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(_main())

@@ -32,15 +32,19 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sessions',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'playground',
     'debug_toolbar',
+    'rest_framework',
+    'django_filters',
     'store',
     'tags',
-    'likes'
+    'likes',
+    'store_custom',
 ]
 
 MIDDLEWARE = [
@@ -86,11 +90,12 @@ WSGI_APPLICATION = 'storefront.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'storefront',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'storefront1',
         'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'MyPassword'
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'PORT': '5432'
     }
 }
 
@@ -137,3 +142,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False,
+}
