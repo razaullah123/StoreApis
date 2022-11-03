@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'playground',
     'debug_toolbar',
     'rest_framework',
+    'djoser',
     'django_filters',
     'store',
     'tags',
@@ -145,5 +146,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'COERCE_DECIMAL_TO_STRING': False,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
 }
 AUTH_USER_MODEL = 'core.User'
